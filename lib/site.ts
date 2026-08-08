@@ -21,18 +21,24 @@ export const SITE = {
 
 export const VIP_PRICE = {
   /** Harga yang ditampilkan di kartu VIP berbayar. */
-  amount: "Rp299.000",
-  period: "/ bulan",
+  amount: "$70",
+  /** Keterangan di samping harga. */
+  period: "sekali bayar",
   /** Coret harga normal. Kosongkan ("") kalau tidak dipakai. */
-  strikethrough: "Rp499.000",
-  note: "Sekali bayar, akses 30 hari.",
+  strikethrough: "",
+  note: "Akses selamanya, tanpa perpanjangan.",
 } as const;
 
 /** Broker untuk jalur VIP gratis. Ubah di sini kalau ganti broker. */
 export const BROKER = {
   name: "Exness",
-  /** Syarat deposit minimal untuk klaim akses VIP. */
-  minDeposit: "Rp200.000",
+  /**
+   * Syarat deposit minimal untuk klaim akses VIP.
+   * Ditulis dalam dolar karena akun broker memang berdenominasi dolar.
+   * $12 dipilih dari Rp200.000 pada kurs ~Rp17.900/USD (Agustus 2026),
+   * dibulatkan ke atas supaya nilainya tetap di atas Rp200.000.
+   */
+  minDeposit: "$12",
 } as const;
 
 /** Instrumen yang dibahas di grup — tampil sebagai pita berjalan di hero. */

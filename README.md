@@ -43,7 +43,6 @@ Kalau ukuran atau posisi mark di file baru berbeda, sesuaikan konstanta
 | Key | Dipakai di |
 |---|---|
 | `grupUmum` | Navbar, hero, section Grup Umum |
-| `vipCheckout` | Kartu VIP "Berlangganan" |
 | `brokerReferral` | Kartu VIP "Lewat broker" |
 | `adminTelegram` | Username admin (tanpa `@`) — semua tombol konfirmasi |
 | `instagram` / `tiktok` / `youtube` / `email` | Footer |

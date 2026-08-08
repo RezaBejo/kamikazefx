@@ -1,3 +1,4 @@
+import BenefitsToggle from "./BenefitsToggle";
 import CopyChat from "./CopyChat";
 import CtaButton from "./CtaButton";
 import Reveal from "./Reveal";
@@ -13,6 +14,13 @@ const BENEFITS = [
   "Materi VIP: strategi, jurnal, manajemen risiko",
   "Respon admin didahulukan",
   "Grup terpisah, khusus member VIP",
+];
+
+/** Pembayaran manual lewat transfer bank — urutannya nyata, jadi diberi nomor. */
+const BAYAR_STEPS = [
+  "Hubungi admin lewat tombol di bawah",
+  "Transfer ke rekening yang dikirim admin",
+  "Kirim bukti transfer, kamu langsung diundang",
 ];
 
 /** Ini urutan yang benar-benar harus dilalui, jadi penomorannya berarti. */
@@ -32,36 +40,23 @@ export default function GrupVip() {
         className="max-w-2xl"
       />
 
-      <Reveal delay={180} className="mt-14 border-t hairline">
-        <ul className="grid sm:grid-cols-2">
-          {BENEFITS.map((benefit) => (
-            <li
-              key={benefit}
-              className="flex items-baseline gap-3 border-b hairline py-3.5 text-[0.9375rem] text-ash"
-            >
-              <span
-                aria-hidden="true"
-                className="h-[2px] w-3 shrink-0 translate-y-[-0.35em] bg-jade-500"
-              />
-              {benefit}
-            </li>
-          ))}
-        </ul>
+      <Reveal delay={180} className="mt-10">
+        <BenefitsToggle items={BENEFITS} label="Benefit grup VIP" />
       </Reveal>
 
-      <div className="mt-14 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
+      <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         {/* Jalur berbayar — ditahan tenang. */}
         <Reveal className="flex flex-col border hairline p-7 sm:p-9">
           <p className="eyebrow">Bayar langsung</p>
           <h3 className="mt-4 font-display text-3xl font-bold tracking-tight">
-            Berlangganan
+            Sekali bayar
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-ash">
             Buat kamu yang sudah punya broker sendiri dan tidak mau buka akun
             baru.
           </p>
 
-          <div className="mt-8 flex items-baseline gap-3">
+          <div className="mt-7 flex items-baseline gap-3">
             <span className="font-display text-5xl font-extrabold tracking-tight tabular-nums">
               {VIP_PRICE.amount}
             </span>
@@ -78,14 +73,30 @@ export default function GrupVip() {
             {VIP_PRICE.note}
           </p>
 
+          <ol className="mt-8 border-t hairline">
+            {BAYAR_STEPS.map((step, i) => (
+              <li
+                key={step}
+                className="flex gap-5 border-b hairline py-3.5 text-[0.9375rem]"
+              >
+                <span className="font-mono text-xs text-ash-dim">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-ash">{step}</span>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-6 text-xs leading-relaxed text-ash-dim">
+            Pembayaran lewat transfer bank manual. Detail rekening dikirim
+            admin langsung di chat, bukan dipajang di halaman ini.
+          </p>
+
           <div className="mt-auto pt-10">
-            <CtaButton href={LINKS.vipCheckout} variant="line" className="w-full">
-              Bayar &amp; gabung
-            </CtaButton>
             <CopyChat
               message={CHAT.vipBayar}
-              label="Sudah bayar? Salin pesan konfirmasi"
-              className="mt-5 border-t hairline pt-5"
+              label="Pesan akses VIP"
+              variant="line"
             />
           </div>
         </Reveal>
@@ -101,12 +112,11 @@ export default function GrupVip() {
           />
           <p className="eyebrow text-blade-500">Lewat {BROKER.name}</p>
           <h3 className="mt-4 font-display text-3xl font-bold tracking-tight">
-            Gratis lewat {BROKER.name}
+            Gratis dengan referal
           </h3>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-ash">
             Buka akun {BROKER.name} lewat link referral kami dan deposit minimal{" "}
-            {BROKER.minDeposit}. Kami dapat komisi dari {BROKER.name}, jadi
-            akses VIP-mu kami buka tanpa biaya.
+            {BROKER.minDeposit}. Jadi akses VIP-mu kami buka tanpa biaya.
           </p>
 
           <ol className="mt-8 border-t hairline">

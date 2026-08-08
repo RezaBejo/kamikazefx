@@ -21,10 +21,10 @@ const FAQS = [
   },
   {
     q: `Kenapa ada opsi berbayar kalau bisa gratis lewat ${BROKER.name}?`,
-    a: `Karena sebagian orang sudah punya broker yang cocok dan tidak mau buka akun baru. Opsi berlangganan ada supaya mereka tetap bisa masuk tanpa pindah ke ${BROKER.name}.`,
+    a: `Karena sebagian orang sudah punya broker yang cocok dan tidak mau buka akun baru. Opsi bayar langsung ada supaya mereka tetap bisa masuk tanpa pindah ke ${BROKER.name}.`,
   },
   {
-    q: "Apakah biaya langganan bisa dikembalikan?",
+    q: "Apakah biayanya bisa dikembalikan?",
     a: "Tidak. Akses VIP dibuka segera setelah pembayaran terkonfirmasi, jadi biayanya tidak bisa direfund. Pastikan kamu sudah paham isi layanannya sebelum membayar.",
   },
 ];

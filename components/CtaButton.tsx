@@ -1,24 +1,15 @@
 import type { ReactNode } from "react";
-
-type Variant = "solid" | "line";
+import { CTA_BASE, CTA_VARIANTS, type CtaVariant } from "@/lib/ui";
 
 type Props = {
   href: string;
   children: ReactNode;
-  variant?: Variant;
+  variant?: CtaVariant;
   className?: string;
 };
 
-const base =
-  "group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 font-display text-[0.95rem] font-bold tracking-[0.06em] uppercase transition-colors duration-200";
-
-const variants: Record<Variant, string> = {
-  solid: "blade-fill text-white hover:brightness-110",
-  line: "border border-ink-400 text-bone hover:border-blade-500 hover:text-blade-500",
-};
-
 /** Panah kecil yang maju sedikit saat hover — satu-satunya gerak di tombol. */
-function Arrow() {
+export function CtaArrow() {
   return (
     <svg
       viewBox="0 0 16 16"
@@ -47,10 +38,10 @@ export default function CtaButton({
       href={href}
       target={isAnchor ? undefined : "_blank"}
       rel={isAnchor ? undefined : "noopener noreferrer"}
-      className={`${base} ${variants[variant]} ${className}`}
+      className={`${CTA_BASE} ${CTA_VARIANTS[variant]} ${className}`}
     >
       {children}
-      <Arrow />
+      <CtaArrow />
     </a>
   );
 }

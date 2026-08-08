@@ -4,6 +4,7 @@ import CtaButton from "./CtaButton";
 import SignalCard from "./SignalCard";
 import Ticker from "./Ticker";
 import { LINKS } from "@/lib/links";
+import { SITE } from "@/lib/site";
 
 const at = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
 
@@ -25,20 +26,20 @@ export default function Hero() {
             </p>
 
             <h1
-              className="a-rise mt-5 font-display text-[2.75rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[4.25rem]"
+              className="a-rise mt-5 font-display text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-[3.25rem] lg:text-[3.75rem]"
               style={at(200)}
             >
-              Masuk pasar dengan rencana, bukan firasat
-              <span className="text-blade-500">.</span>
+              Kuasai SMC &amp; Rahasia Fair Value Gap (FVG) High-Probability
             </h1>
 
             <p
               className="a-rise mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-ash"
               style={at(300)}
             >
-              Sinyal harian lengkap dengan entry, stop loss, dan alasan di
-              baliknya. Ditambah materi edukasi supaya lama-lama kamu bisa baca
-              chart sendiri — bukan cuma ikut.
+              Selamat datang di {SITE.name}. Kami membuka tabir rahasia
+              institusi finansial melalui pendekatan Smart Money Concepts
+              (SMC), berfokus penuh pada FVG (Fair Value Gap) Entry dengan
+              tingkat akurasi tinggi dan Risk-to-Reward Ratio (RRR) maksimal.
             </p>
 
             <div

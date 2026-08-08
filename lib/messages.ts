@@ -5,15 +5,19 @@
  * supaya benar-benar tinggal tempel dan kirim. Detail seperti nomor akun atau
  * bukti transfer dikirim menyusul lewat lampiran.
  */
-import { BROKER } from "./site";
+import { BROKER, VIP_PRICE } from "./site";
 
 export const CHAT = {
-  /** Sudah bayar lewat link checkout, minta dibukakan akses. */
+  /**
+   * Jalur bayar langsung. Pembayaran lewat transfer manual, jadi pesan ini
+   * memulai percakapan untuk meminta detail rekening — nomor rekening sengaja
+   * tidak dipajang di halaman.
+   */
   vipBayar: `Halo Admin Kamikaze FX.
 
-Saya mau gabung grup VIP lewat jalur berlangganan, dan pembayaran sudah saya lakukan.
+Saya mau gabung grup VIP lewat jalur bayar langsung (${VIP_PRICE.amount}, sekali bayar, akses selamanya).
 
-Bukti pembayarannya saya kirim setelah pesan ini. Mohon dibantu untuk akses grup VIP-nya. Terima kasih.`,
+Mohon dikirim detail rekening untuk transfernya. Setelah transfer, bukti pembayaran saya kirim di chat ini. Terima kasih.`,
 
   /** Sudah daftar broker lewat link referral, minta diverifikasi. */
   vipBroker: `Halo Admin Kamikaze FX.
@@ -25,7 +29,7 @@ Nomor akun dan bukti pendaftarannya saya kirim setelah pesan ini. Mohon dibantu 
   /** Belum memutuskan, mau tanya dulu. */
   vipTanya: `Halo Admin Kamikaze FX.
 
-Saya tertarik gabung grup VIP tapi masih bingung pilih jalur berlangganan atau lewat ${BROKER.name}.
+Saya tertarik gabung grup VIP tapi masih bingung pilih jalur bayar langsung atau lewat ${BROKER.name}.
 
 Mohon dibantu penjelasannya. Terima kasih.`,
 

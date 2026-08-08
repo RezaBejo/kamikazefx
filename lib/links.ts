@@ -7,9 +7,6 @@ export const LINKS = {
   /** Grup umum (gratis) — link invite Telegram. */
   grupUmum: "https://t.me/+ZOEIwBl3ak9kMWNl",
 
-  /** Halaman pembayaran / checkout VIP (Trakteer, Mayar, Xendit, Lynk, dll). */
-  vipCheckout: "https://mayar.link/kamikazefx-vip",
-
   /**
    * Link referral pendaftaran broker (jalur VIP gratis).
    * Jangan hapus bagian apa pun dari URL ini — kode di belakang /a/ adalah
