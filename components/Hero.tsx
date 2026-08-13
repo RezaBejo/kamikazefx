@@ -4,9 +4,15 @@ import CtaButton from "./CtaButton";
 import SignalCard from "./SignalCard";
 import Ticker from "./Ticker";
 import { LINKS } from "@/lib/links";
-import { SITE } from "@/lib/site";
 
 const at = (ms: number) => ({ "--d": `${ms}ms` }) as CSSProperties;
+
+/** Tiga janji utama di hero. Ditulis pendek supaya terbaca sekali lihat. */
+const POINTS = [
+  "Rahasia grow saldo kecil jadi naga",
+  "Teknik sniper entry",
+  "Trabar via Google Meet",
+];
 
 export default function Hero() {
   return (
@@ -26,21 +32,26 @@ export default function Hero() {
             </p>
 
             <h1
-              className="a-rise mt-5 font-display text-[2.5rem] leading-[0.95] font-extrabold tracking-tight text-balance sm:text-[3.25rem] lg:text-[3.75rem]"
+              className="a-rise mt-5 font-display text-[3rem] leading-[0.92] font-extrabold tracking-tight text-balance sm:text-[4rem] lg:text-[4.75rem]"
               style={at(200)}
             >
-              Kuasai SMC &amp; Rahasia Fair Value Gap (FVG) High-Probability
+              CIRCLE TRADER HIGH QUALITY
             </h1>
 
-            <p
-              className="a-rise mt-7 max-w-xl text-[1.0625rem] leading-relaxed text-ash"
-              style={at(300)}
-            >
-              Selamat datang di {SITE.name}. Kami membuka tabir rahasia
-              institusi finansial melalui pendekatan Smart Money Concepts
-              (SMC), berfokus penuh pada FVG (Fair Value Gap) Entry dengan
-              tingkat akurasi tinggi dan Risk-to-Reward Ratio (RRR) maksimal.
-            </p>
+            <ul className="a-rise mt-8 space-y-3.5" style={at(300)}>
+              {POINTS.map((point) => (
+                <li
+                  key={point}
+                  className="flex items-baseline gap-3.5 font-display text-xl leading-tight font-bold tracking-tight sm:text-2xl lg:text-[1.75rem]"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="h-[2px] w-3.5 shrink-0 translate-y-[-0.32em] bg-blade-500"
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
 
             <div
               className="a-rise mt-9 flex flex-col gap-3 sm:flex-row"
